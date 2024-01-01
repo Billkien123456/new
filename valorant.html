@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Kiểu CSS cho thanh điều hướng -->
+    <style>
+      nav {
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        color: white;
+        padding: 20px; /* Tăng padding */
+        text-align: center;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        transition: height 0.3s ease; /* Thêm hiệu ứng lướt lên */
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      li {
+        margin: 0;
+        padding: 15px; /* Tăng padding */
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 50px; /* Tăng kích thước font chữ */
+        transition: background-color 0.3s ease;
+        display: block;
+      }
+      a:hover {
+        background: linear-gradient(to right, #ff5e62, #ff9966);
+      }
+      .homepage {
+        text-align: center;
+      }
+      .homepage img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+      .scrolled {
+        height: 120px; /* Kích thước mới khi thanh điều hướng được cuộn lên */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Thanh điều hướng ReactJS -->
+    <div id="root">
+      <nav>
+        <ul>
+          <li><a href="#">Matching</a></li>
+          <li><a href="#">Botchat</a></li>
+          <li><a href="#">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Nội dung của trang web -->
+    <div class="homepage">
+        <img class="image" src=".vscode/Homepage.png" alt="Homepage Image" />
+    </div>
+
+    <!-- Script JavaScript để xử lý cuộn lên và xuống -->
+    <script>
+      window.addEventListener('scroll', function() {
+        var nav = document.querySelector('nav');
+        nav.classList.toggle('scrolled', window.scrollY > 0);
+      });
+    </script>
+  </body>
+</html>
